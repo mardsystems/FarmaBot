@@ -1,5 +1,4 @@
 ﻿using FarmaBot.Models;
-using FarmaBot.Services;
 using Newtonsoft.Json;
 using System;
 using Telegram.Bot.Types;
@@ -18,11 +17,11 @@ namespace FarmaBot.Bot.Callbacks
             {
                 Bot.SendTextMessageAsync(
                     callbackQuery.Message.Chat.Id,
-                    $"Ok! Pode continuar a sua compra!.");
+                    $"Ok! Pode continuar a sua compra!");
             }
             else
             {
-                if (CarrinhoCompras.Instance.Localizacao == null)
+                if (SessionManager.Current.Endereco == null)
                 {
                     var bt = new KeyboardButton("Compartilhar minha localização atual")
                     {
@@ -49,12 +48,8 @@ namespace FarmaBot.Bot.Callbacks
                 {
                     Data = DateTime.Now,
                     Cliente = callbackQuery.Message.Chat.Username,
-                    Medicamentos = CarrinhoCompras.Instance.Medicamentos,
-                    Endereco = new Endereco
-                    {
-                        Latitude = CarrinhoCompras.Instance.Localizacao.Latitude,
-                        Longitude = CarrinhoCompras.Instance.Localizacao.Longitude
-                    }
+                    Medicamentos = SessionManager.Current.Carrinho.Medicamentos,
+                    Endereco = SessionManager.Current.Endereco
                 };
 
                 var botService = new BotService();
@@ -84,6 +79,8 @@ namespace FarmaBot.Bot.Callbacks
                                 pedido.Endereco.Latitude,
                                 pedido.Endereco.Longitude,
                                 replyMarkup: new ReplyKeyboardRemove()));
+
+                SessionManager.Destroy();
             }
         }
 

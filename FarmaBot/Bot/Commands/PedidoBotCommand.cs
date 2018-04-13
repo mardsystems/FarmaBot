@@ -11,7 +11,7 @@ namespace FarmaBot.Bot.Commands
     {
         public override async void Execute(Message message)
         {
-            if (CarrinhoCompras.Instance.Vazio)
+            if (SessionManager.Current.Carrinho.Vazio)
             {
                 var msg = @"
 Ops, nenhum remédio adicionado ao carrinho. " + "\n" +
@@ -40,7 +40,7 @@ Ops, nenhum remédio adicionado ao carrinho. " + "\n" +
 
             await Bot.SendTextMessageAsync(
                 message.Chat.Id,
-                $"Resumo do pedido: \n {CarrinhoCompras.Instance.Resumo()} \n Deseja finalizar o pedido?",
+                $"Resumo do pedido: \n {SessionManager.Current.Carrinho.Resumo()} \n Deseja finalizar o pedido?",
                 replyMarkup: new InlineKeyboardMarkup(opcoes));
         }
     }

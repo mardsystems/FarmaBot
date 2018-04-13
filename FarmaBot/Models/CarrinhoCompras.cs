@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Telegram.Bot.Types;
 
 namespace FarmaBot.Models
 {
@@ -20,21 +19,6 @@ namespace FarmaBot.Models
             if (med != null) Medicamentos.Add(med);
 
             return med;
-        }
-
-        public bool Vazio { get { return Medicamentos.Count == 0; } }
-
-        public static CarrinhoCompras Instance
-        {
-            get
-            {
-                if (_instance == null)
-                {
-                    _instance = new CarrinhoCompras();
-                }
-
-                return _instance;
-            }
         }
 
         public decimal ValorTotal
@@ -60,13 +44,8 @@ namespace FarmaBot.Models
             return sb.ToString();
         }
 
-        public void AlterarLocalizacao(Location location)
-        {
-            Localizacao = location;
-        }        
+        public bool Vazio { get { return Medicamentos.Count == 0; } }
 
-        private static CarrinhoCompras _instance;
         public List<Medicamento> Medicamentos { get; }
-        public Location Localizacao { get; private set; }
     }
 }

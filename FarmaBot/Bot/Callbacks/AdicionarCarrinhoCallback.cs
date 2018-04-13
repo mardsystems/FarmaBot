@@ -11,7 +11,7 @@ namespace FarmaBot.Bot.Callbacks
             dynamic response = JsonConvert.DeserializeObject(callbackQuery.Data);
             int id = response.id;
 
-            var med = CarrinhoCompras.Instance.AdicionarMedicamento(id);
+            var med = SessionManager.Current.Carrinho.AdicionarMedicamento(id);
 
             if (med != null)
             {

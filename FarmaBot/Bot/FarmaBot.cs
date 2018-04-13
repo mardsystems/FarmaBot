@@ -2,6 +2,7 @@
 using FarmaBot.Bot.Commands;
 using FarmaBot.Models;
 using System;
+using System.Configuration;
 using System.Linq;
 using Telegram.Bot;
 using Telegram.Bot.Args;
@@ -32,9 +33,20 @@ namespace FarmaBot.Bot
 
         private static void Instance_OnUpdate(object sender, UpdateEventArgs updateEventArgs)
         {
+            if (updateEventArgs.Update.Message?.From != null)
+            {
+                SessionManager.User = updateEventArgs.Update.Message.From;
+            }
+
             if (updateEventArgs.Update.Message?.Location != null)
             {
-                CarrinhoCompras.Instance.AlterarLocalizacao(updateEventArgs.Update.Message.Location);
+                SessionManager.Current.AlterarLocalizacao(
+                    new Endereco
+                    {
+                        Latitude = updateEventArgs.Update.Message.Location.Latitude,
+                        Longitude = updateEventArgs.Update.Message.Location.Longitude
+                    }
+                );
             }
         }
 
@@ -70,6 +82,6 @@ namespace FarmaBot.Bot
             cmd.Execute(message);
         }
 
-        private static TelegramBotClient Instance = new TelegramBotClient("596651559:AAH3ap4w1pUenwsQZpBD3C2u-pCTK7wYjKE");
+        private static TelegramBotClient Instance = new TelegramBotClient(ConfigurationManager.AppSettings["TelegramApiToken"]);
     }
 }

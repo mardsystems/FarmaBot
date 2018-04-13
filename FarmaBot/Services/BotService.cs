@@ -2,7 +2,7 @@
 using FarmaBot.Models;
 using FarmaBot.Repository;
 
-namespace FarmaBot.Services
+namespace FarmaBot.Models
 {
     public class BotService : IBotService
     {

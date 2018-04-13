@@ -1,7 +1,7 @@
 ﻿using FarmaBot.Models;
 using System.Collections.Generic;
 
-namespace FarmaBot.Services
+namespace FarmaBot.Models
 {
     public interface IBotService
     {

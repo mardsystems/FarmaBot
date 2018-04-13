@@ -39,6 +39,7 @@
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -77,6 +78,8 @@
     <Compile Include="Repository\MemoryRepository.cs" />
     <Compile Include="Services\BotService.cs" />
     <Compile Include="Services\IBotService.cs" />
+    <Compile Include="Models\Sessao.cs" />
+    <Compile Include="Services\SessionManager.cs" />
     <Compile Include="Utils\StringExtensions.cs" />
   </ItemGroup>
   <ItemGroup>

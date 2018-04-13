@@ -1,4 +1,4 @@
-﻿using FarmaBot.Services;
+﻿using FarmaBot.Models;
 using Telegram.Bot;
 using Telegram.Bot.Types;
 
