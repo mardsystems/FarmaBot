@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using FarmaBot.Model;
-using FarmaBot.Infra.Repository;
+using FarmaBot.Infra.Data.Memory;
 
 namespace FarmaBot.App
 {

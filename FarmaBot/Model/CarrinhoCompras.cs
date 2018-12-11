@@ -1,4 +1,4 @@
-﻿using FarmaBot.Infra.Data;
+﻿using FarmaBot.Infra.Data.Memory;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

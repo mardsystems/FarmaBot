@@ -1,4 +1,4 @@
-﻿using FarmaBot.Infra.Data;
+﻿using FarmaBot.Infra.Data.Memory;
 
 namespace FarmaBot
 {
