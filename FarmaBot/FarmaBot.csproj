@@ -78,8 +78,8 @@
     <Compile Include="Infra\Repository\MemoryRepository.cs" />
     <Compile Include="App\BotService.cs" />
     <Compile Include="App\IBotService.cs" />
-    <Compile Include="Model\Sessao.cs" />
-    <Compile Include="App\SessionManager.cs" />
+    <Compile Include="UI\Sessao.cs" />
+    <Compile Include="UI\SessionManager.cs" />
     <Compile Include="Infra\StringExtensions.cs" />
   </ItemGroup>
   <ItemGroup>

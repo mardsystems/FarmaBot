@@ -1,8 +1,7 @@
-﻿using FarmaBot.Model;
-using System.Collections.Concurrent;
+﻿using System.Collections.Concurrent;
 using Telegram.Bot.Types;
 
-namespace FarmaBot.App
+namespace FarmaBot.UI
 {
     public static class SessionManager
     {

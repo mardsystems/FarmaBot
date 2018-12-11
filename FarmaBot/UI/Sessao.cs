@@ -1,4 +1,6 @@
-﻿namespace FarmaBot.Model
+﻿using FarmaBot.Model;
+
+namespace FarmaBot.UI
 {
     public class Sessao
     {
