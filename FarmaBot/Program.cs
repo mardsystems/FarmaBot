@@ -1,4 +1,4 @@
-﻿using FarmaBot.Data;
+﻿using FarmaBot.Infra.Data;
 
 namespace FarmaBot
 {
@@ -8,7 +8,7 @@ namespace FarmaBot
         {
             MemoryDatabase.InitData();
 
-            Bot.FarmaBot.Init();
+            UI.FarmaBot.Init();
         }
     }
 }
