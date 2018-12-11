@@ -3,7 +3,32 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarmaBot", "FarmaBot\FarmaBot.csproj", "{B426AF49-7DF8-47F2-9631-453AB4B6E8C0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarmaBot.UI", "FarmaBot.UI\FarmaBot.UI.csproj", "{541BF6B4-84A4-437D-A3DC-1C918CDCDA1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarmaBot.ApplicationModel", "FarmaBot.ApplicationModel\FarmaBot.ApplicationModel.csproj", "{09A349EA-6F70-430A-9D95-73E247BFFE67}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarmaBot.DomainModel", "FarmaBot.DomainModel\FarmaBot.DomainModel.csproj", "{CF79EA12-70BA-43B5-BEED-40E0CD9741ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarmaBot.Infrastructure", "FarmaBot.Infrastructure\FarmaBot.Infrastructure.csproj", "{8F45CBC1-CCB5-4E16-9ADC-5CDB6C528443}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System.Extensions", "System.Extensions\System.Extensions.csproj", "{0E8B0AD5-58B7-4712-8941-5C88093218F6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Camada de Apresentação", "1 - Camada de Apresentação", "{722CCECD-FB6B-40F8-87B4-A69309D88006}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Camada de Aplicação", "2 - Camada de Aplicação", "{3CC87A58-5637-454A-A86E-E8E99A3ABFC2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Camada de Domínio", "3 - Camada de Domínio", "{F66E7575-F163-46BA-9BEB-6AA732E2A110}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Camada de Infraestrutura", "4 - Camada de Infraestrutura", "{83EA2271-9C16-4A95-B7C5-645589C9A4CB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Documentação", "5 - Documentação", "{5799FADD-F506-4574-9CAD-D045D5DF9A2D}"
+	ProjectSection(SolutionItems) = preProject
+		FarmaBot.asta = FarmaBot.asta
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarmaBot.ApplicationModel.Domain", "FarmaBot.ApplicationModel.Domain\FarmaBot.ApplicationModel.Domain.csproj", "{19E6F021-CF74-43FA-A74C-A540F8FD6229}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarmaBot.DomainModel.Persistence.LiteDB", "FarmaBot.DomainModel.Persistence.LiteDB\FarmaBot.DomainModel.Persistence.LiteDB.csproj", "{F1E5D1BC-E7CC-486E-83C3-25E868B5A0FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,13 +36,46 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B426AF49-7DF8-47F2-9631-453AB4B6E8C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B426AF49-7DF8-47F2-9631-453AB4B6E8C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B426AF49-7DF8-47F2-9631-453AB4B6E8C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B426AF49-7DF8-47F2-9631-453AB4B6E8C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{541BF6B4-84A4-437D-A3DC-1C918CDCDA1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{541BF6B4-84A4-437D-A3DC-1C918CDCDA1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{541BF6B4-84A4-437D-A3DC-1C918CDCDA1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{541BF6B4-84A4-437D-A3DC-1C918CDCDA1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09A349EA-6F70-430A-9D95-73E247BFFE67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09A349EA-6F70-430A-9D95-73E247BFFE67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09A349EA-6F70-430A-9D95-73E247BFFE67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09A349EA-6F70-430A-9D95-73E247BFFE67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF79EA12-70BA-43B5-BEED-40E0CD9741ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF79EA12-70BA-43B5-BEED-40E0CD9741ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF79EA12-70BA-43B5-BEED-40E0CD9741ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF79EA12-70BA-43B5-BEED-40E0CD9741ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F45CBC1-CCB5-4E16-9ADC-5CDB6C528443}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F45CBC1-CCB5-4E16-9ADC-5CDB6C528443}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F45CBC1-CCB5-4E16-9ADC-5CDB6C528443}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F45CBC1-CCB5-4E16-9ADC-5CDB6C528443}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E8B0AD5-58B7-4712-8941-5C88093218F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E8B0AD5-58B7-4712-8941-5C88093218F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E8B0AD5-58B7-4712-8941-5C88093218F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E8B0AD5-58B7-4712-8941-5C88093218F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19E6F021-CF74-43FA-A74C-A540F8FD6229}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19E6F021-CF74-43FA-A74C-A540F8FD6229}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19E6F021-CF74-43FA-A74C-A540F8FD6229}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19E6F021-CF74-43FA-A74C-A540F8FD6229}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1E5D1BC-E7CC-486E-83C3-25E868B5A0FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1E5D1BC-E7CC-486E-83C3-25E868B5A0FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1E5D1BC-E7CC-486E-83C3-25E868B5A0FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1E5D1BC-E7CC-486E-83C3-25E868B5A0FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{541BF6B4-84A4-437D-A3DC-1C918CDCDA1B} = {722CCECD-FB6B-40F8-87B4-A69309D88006}
+		{09A349EA-6F70-430A-9D95-73E247BFFE67} = {3CC87A58-5637-454A-A86E-E8E99A3ABFC2}
+		{CF79EA12-70BA-43B5-BEED-40E0CD9741ED} = {F66E7575-F163-46BA-9BEB-6AA732E2A110}
+		{8F45CBC1-CCB5-4E16-9ADC-5CDB6C528443} = {83EA2271-9C16-4A95-B7C5-645589C9A4CB}
+		{0E8B0AD5-58B7-4712-8941-5C88093218F6} = {83EA2271-9C16-4A95-B7C5-645589C9A4CB}
+		{19E6F021-CF74-43FA-A74C-A540F8FD6229} = {3CC87A58-5637-454A-A86E-E8E99A3ABFC2}
+		{F1E5D1BC-E7CC-486E-83C3-25E868B5A0FB} = {F66E7575-F163-46BA-9BEB-6AA732E2A110}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9DE82165-7A1A-4DBC-BB1D-C0CB61FD8778}
