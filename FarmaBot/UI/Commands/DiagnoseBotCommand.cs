@@ -1,5 +1,6 @@
-﻿using FarmaBot.UI.Callbacks;
-using FarmaBot.Model;
+﻿using FarmaBot.App;
+using FarmaBot.Model.Sintomas;
+using FarmaBot.UI.Callbacks;
 using Newtonsoft.Json;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.InlineKeyboardButtons;
@@ -7,8 +8,15 @@ using Telegram.Bot.Types.ReplyMarkups;
 
 namespace FarmaBot.UI.Commands
 {
-    public class DiagnoseBotCommand : FarmaBotCommandBase
+    public class DiagnoseBotCommand : BotCommand
     {
+        protected IRealizacaoDeDiagnosticos realizacaoDeDiagnosticos;
+
+        public DiagnoseBotCommand(Infra.App app)
+        {
+            realizacaoDeDiagnosticos = app.ObtemInterfaceDeRealizacaoDeDiagnosticos();
+        }
+
         public override async void Execute(Message message)
         {
             if (message.Text.Split(' ').Length <= 1)
@@ -26,9 +34,9 @@ namespace FarmaBot.UI.Commands
                 Descricao = message.Text.Substring(message.Text.IndexOf(" ")).Trim()
             };
 
-            var result = BotService.Diagnosticar(sintoma);
+            var medicamentos = realizacaoDeDiagnosticos.RealizaDiagnostico(sintoma);
 
-            if (result.Count == 0)
+            if (medicamentos.Count == 0)
             {
                 await Bot.SendTextMessageAsync(
                     message.Chat.Id,
@@ -37,11 +45,11 @@ namespace FarmaBot.UI.Commands
             }
             else
             {
-                InlineKeyboardButton[] opcoes = new InlineKeyboardButton[result.Count];
+                InlineKeyboardButton[] opcoes = new InlineKeyboardButton[medicamentos.Count];
 
                 var idx = 0;
 
-                foreach (var medicamento in result)
+                foreach (var medicamento in medicamentos)
                 {
                     opcoes[idx] = InlineKeyboardButton.WithCallbackData(medicamento.Nome, JsonConvert.SerializeObject(new
                     {

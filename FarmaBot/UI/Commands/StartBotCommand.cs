@@ -3,7 +3,7 @@ using Telegram.Bot.Types.ReplyMarkups;
 
 namespace FarmaBot.UI.Commands
 {
-    public class StartBotCommand : FarmaBotCommandBase
+    public class StartBotCommand : BotCommand
     {
         public override async void Execute(Message message)
         {

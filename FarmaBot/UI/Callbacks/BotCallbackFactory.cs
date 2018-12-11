@@ -5,15 +5,20 @@ namespace FarmaBot.UI.Callbacks
 {
     public class BotCallbackFactory
     {
-        private static Dictionary<BotCallbackType, BotBaseCallback> callbacks = new Dictionary<BotCallbackType, BotBaseCallback>
-        {
-            { BotCallbackType.ADD_CARRINHO_CALLBACK, new AdicionarCarrinhoCallback() },
-            { BotCallbackType.FINALIZAR_PEDIDO_CALLBACK, new FinalizarPedidoCallback() }
-        };
+        private static Dictionary<BotCallbackType, BotCallback> callbacks;
 
-        public static BotBaseCallback Get(BotCallbackType type, TelegramBotClient bot)
+        public static void CreateCallbacks(Infra.App app)
         {
-            if (callbacks.TryGetValue(type, out BotBaseCallback callback))
+            callbacks = new Dictionary<BotCallbackType, BotCallback>
+            {
+                { BotCallbackType.ADD_CARRINHO_CALLBACK, new AdicionarCarrinhoCallback(app) },
+                { BotCallbackType.FINALIZAR_PEDIDO_CALLBACK, new FinalizarPedidoCallback(app) }
+            };
+        }
+
+        public static BotCallback Get(BotCallbackType type, TelegramBotClient bot)
+        {
+            if (callbacks.TryGetValue(type, out BotCallback callback))
             {
                 callback.Bot = bot;
             }

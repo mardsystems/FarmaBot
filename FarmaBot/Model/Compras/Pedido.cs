@@ -1,15 +1,20 @@
-﻿using System;
+﻿using FarmaBot.Model.Medicamentos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace FarmaBot.Model
+namespace FarmaBot.Model.Compras
 {
     public class Pedido
     {
         public int Id { get; set; }
+
         public DateTime Data { get; set; }
+
         public string Cliente { get; set; }
+
         public Endereco Endereco { get; set; }
+
         public List<Medicamento> Medicamentos { get; set; } = new List<Medicamento>();
 
         public decimal ValorTotal

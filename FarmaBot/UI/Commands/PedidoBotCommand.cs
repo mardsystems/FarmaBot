@@ -8,8 +8,15 @@ using FarmaBot.App;
 
 namespace FarmaBot.UI.Commands
 {
-    public class PedidoBotCommand : FarmaBotCommandBase
+    public class PedidoBotCommand : BotCommand
     {
+        private readonly IRealizacaoDePedidos realizacaoDePedidos;
+
+        public PedidoBotCommand(Infra.App app)
+        {
+            realizacaoDePedidos = app.ObtemInterfaceDeRealizacaoDePedidos();
+        }
+
         public override async void Execute(Message message)
         {
             if (SessionManager.Current.Carrinho.Vazio)

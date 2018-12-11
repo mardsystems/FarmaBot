@@ -17,6 +17,7 @@ namespace FarmaBot.UI.Callbacks
             try
             {
                 dynamic json = JsonConvert.DeserializeObject(value);
+
                 int type = json.type;
 
                 return (BotCallbackType)type;

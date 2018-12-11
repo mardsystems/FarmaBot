@@ -1,12 +1,15 @@
-﻿using FarmaBot.App;
-using FarmaBot.Model;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Telegram.Bot.Types;
 
 namespace FarmaBot.UI.Callbacks
 {
-    public class AdicionarCarrinhoCallback : BotBaseCallback
+    public class AdicionarCarrinhoCallback : BotCallback
     {
+        public AdicionarCarrinhoCallback(Infra.App app)
+        {
+
+        }
+
         public override void Execute(CallbackQuery callbackQuery)
         {
             dynamic response = JsonConvert.DeserializeObject(callbackQuery.Data);

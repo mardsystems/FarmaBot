@@ -1,5 +1,5 @@
 ﻿using FarmaBot.App;
-using FarmaBot.Model;
+using FarmaBot.Model.Compras;
 using Newtonsoft.Json;
 using System;
 using Telegram.Bot.Types;
@@ -7,8 +7,15 @@ using Telegram.Bot.Types.ReplyMarkups;
 
 namespace FarmaBot.UI.Callbacks
 {
-    public class FinalizarPedidoCallback : BotBaseCallback
+    public class FinalizarPedidoCallback : BotCallback
     {
+        private readonly IRealizacaoDePedidos realizacaoDePedidos;
+
+        public FinalizarPedidoCallback(Infra.App app)
+        {
+            realizacaoDePedidos = app.ObtemInterfaceDeRealizacaoDePedidos();
+        }
+
         public override void Execute(CallbackQuery callbackQuery)
         {
             dynamic response = JsonConvert.DeserializeObject(callbackQuery.Data);
@@ -49,13 +56,11 @@ namespace FarmaBot.UI.Callbacks
                 {
                     Data = DateTime.Now,
                     Cliente = callbackQuery.Message.Chat.Username,
-                    Medicamentos = SessionManager.Current.Carrinho.Medicamentos,
+                    Medicamentos = SessionManager.Current.Carrinho.MedicamentosComprados,
                     Endereco = SessionManager.Current.Endereco
                 };
 
-                var botService = new SintomasService();
-
-                var id = botService.RealizarPedido(pedido);
+                var id = realizacaoDePedidos.RealizaPedido(pedido);
 
                 var valor = String.Format("{0:C}", pedido.ValorTotal);
 

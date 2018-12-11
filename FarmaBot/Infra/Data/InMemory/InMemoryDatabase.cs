@@ -1,11 +1,13 @@
-﻿using FarmaBot.Model;
+﻿using FarmaBot.Model.Medicamentos;
+using FarmaBot.Model.Sintomas;
 using System.Collections.Generic;
 
-namespace FarmaBot.Infra.Data.Memory
+namespace FarmaBot.Infra.Data.InMemory
 {
-    public class MemoryDatabase
+    public class InMemoryDatabase
     {
         public static List<Medicamento> Medicamentos;
+
         public static List<Sintoma> Sintomas;
 
         public static void InitData()
@@ -55,7 +57,6 @@ namespace FarmaBot.Infra.Data.Memory
                         "gases"
                     }
                 },
-
                 new Medicamento
                 {
                     Id = 4,

@@ -1,4 +1,4 @@
-﻿using FarmaBot.Model;
+﻿using FarmaBot.Model.Sintomas;
 using LiteDB;
 using System.IO;
 

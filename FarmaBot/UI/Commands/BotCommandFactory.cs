@@ -1,26 +1,33 @@
-﻿using System.Collections.Generic;
+﻿using FarmaBot.Infra;
+using System.Collections.Generic;
 using Telegram.Bot;
 
 namespace FarmaBot.UI.Commands
 {
     public class BotCommandFactory
     {
-        private static Dictionary<string, FarmaBotCommandBase> commands = new Dictionary<string, FarmaBotCommandBase>
-        {
-            { "/start", new StartBotCommand() },
-            { "/diagnose", new DiagnoseBotCommand() },
-            { "/pedido", new PedidoBotCommand() }
-        };
+        private static Dictionary<string, BotCommand> commands;
 
-        public static FarmaBotCommandBase Get(string command, TelegramBotClient bot)
+        public static void CreateCommands(Infra.App app)
         {
-            if (commands.TryGetValue(command, out FarmaBotCommandBase cmd))
+            commands = new Dictionary<string, BotCommand>
+            {
+                { "/start", new StartBotCommand() },
+                { "/diagnose", new DiagnoseBotCommand(app) },
+                { "/pedido", new PedidoBotCommand(app) }
+            };
+        }
+
+        public static BotCommand Get(string command, TelegramBotClient bot)
+        {
+            if (commands.TryGetValue(command, out BotCommand cmd))
             {
                 cmd.Bot = bot;
             }
             else
             {
                 cmd = new InvalidBotCommand();
+
                 cmd.Bot = bot;
             }
 
