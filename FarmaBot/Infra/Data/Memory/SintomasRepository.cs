@@ -4,9 +4,9 @@ using System.Linq;
 using FarmaBot.Infra.Data;
 using FarmaBot.Model;
 
-namespace FarmaBot.Infra.Repository
+namespace FarmaBot.Infra.Data.Memory
 {
-    public class MemoryRepository : IBotRepository
+    public class SintomasRepository : ISintomasRepository
     {
         public List<Medicamento> BuscarMedicamentos(Sintoma sintoma)
         {

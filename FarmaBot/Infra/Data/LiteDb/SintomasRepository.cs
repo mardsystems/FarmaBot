@@ -2,9 +2,9 @@
 using System;
 using System.Collections.Generic;
 
-namespace FarmaBot.Infra.Repository
+namespace FarmaBot.Infra.Data.LiteDb
 {
-    public class LiteDBBotRepository : IBotRepository
+    public class SintomasRepository : ISintomasRepository
     {
         public List<Medicamento> BuscarMedicamentos(Sintoma sintoma)
         {

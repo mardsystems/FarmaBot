@@ -1,9 +1,9 @@
 ﻿using FarmaBot.Model;
 using System.Collections.Generic;
 
-namespace FarmaBot.Infra.Repository
+namespace FarmaBot.Model
 {
-    public interface IBotRepository
+    public interface ISintomasRepository
     {
         List<Medicamento> BuscarMedicamentos(Sintoma sintoma);
         int RealizarPedido(Pedido pedido);

@@ -2,7 +2,7 @@
 using LiteDB;
 using System.IO;
 
-namespace FarmaBot.Infra.Data
+namespace FarmaBot.Infra.Data.LitDb
 {
     public class LiteDbDatabase
     {

@@ -1,7 +1,7 @@
 ﻿using FarmaBot.Model;
 using System.Collections.Generic;
 
-namespace FarmaBot.Infra.Data
+namespace FarmaBot.Infra.Data.Memory
 {
     public class MemoryDatabase
     {

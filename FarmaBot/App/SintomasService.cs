@@ -16,6 +16,6 @@ namespace FarmaBot.App
             return _botRepository.RealizarPedido(pedido);
         }
 
-        private readonly IBotRepository _botRepository = new MemoryRepository();
+        private readonly ISintomasRepository _botRepository = new SintomasRepository();
     }
 }
