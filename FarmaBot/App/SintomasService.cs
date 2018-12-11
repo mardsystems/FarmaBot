@@ -4,7 +4,7 @@ using FarmaBot.Infra.Repository;
 
 namespace FarmaBot.App
 {
-    public class BotService : IBotService
+    public class SintomasService : ISintomasService
     {
         public List<Medicamento> Diagnosticar(Sintoma sintoma)
         {

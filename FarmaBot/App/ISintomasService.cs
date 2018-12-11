@@ -3,9 +3,10 @@ using System.Collections.Generic;
 
 namespace FarmaBot.App
 {
-    public interface IBotService
+    public interface ISintomasService
     {
         List<Medicamento> Diagnosticar(Sintoma sintoma);
+
         int RealizarPedido(Pedido pedido);
     }
 }

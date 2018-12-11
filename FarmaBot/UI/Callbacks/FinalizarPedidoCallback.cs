@@ -53,7 +53,7 @@ namespace FarmaBot.UI.Callbacks
                     Endereco = SessionManager.Current.Endereco
                 };
 
-                var botService = new BotService();
+                var botService = new SintomasService();
 
                 var id = botService.RealizarPedido(pedido);
 

@@ -9,6 +9,6 @@ namespace FarmaBot.UI.Commands
         public abstract void Execute(Message message);
 
         public TelegramBotClient Bot { get; set; }
-        protected IBotService BotService = new BotService();
+        protected ISintomasService BotService = new SintomasService();
     }
 }
