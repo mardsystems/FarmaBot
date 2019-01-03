@@ -1,5 +1,4 @@
-﻿using FarmaBot.Infra;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Telegram.Bot;
 
 namespace FarmaBot.UI.Commands

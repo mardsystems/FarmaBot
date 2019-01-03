@@ -1,5 +1,4 @@
-﻿using FarmaBot.DomainModel.Medicamentos;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace FarmaBot.DomainModel.Sintomas
 {
@@ -8,8 +7,6 @@ namespace FarmaBot.DomainModel.Sintomas
         public int Id { get; set; }
 
         public string Descricao { get; set; }
-
-        public List<Medicamento> Medicamentos { get; set; } = new List<Medicamento>();
 
         public List<string> AsList()
         {

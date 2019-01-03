@@ -1,4 +1,4 @@
-﻿using FarmaBot.Infra;
+﻿using System;
 using System.Collections.Generic;
 
 namespace FarmaBot.DomainModel.Medicamentos

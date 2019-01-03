@@ -44,6 +44,7 @@
     <Compile Include="Compras\CarrinhoDeCompras.cs" />
     <Compile Include="Compras\IRepositorioDePedidos.cs" />
     <Compile Include="Compras\Pedido.cs" />
+    <Compile Include="Diagnostico\CoberturaDeSintoma.cs" />
     <Compile Include="Diagnostico\IDiagnostico.cs" />
     <Compile Include="Diagnostico\ServicoDeDiagnostico.cs" />
     <Compile Include="Endereco.cs" />
