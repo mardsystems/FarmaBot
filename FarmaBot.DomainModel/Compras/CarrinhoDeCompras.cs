@@ -1,4 +1,4 @@
-﻿using FarmaBot.DomainModel.Medicamentos;
+﻿using FarmaBot.DomainModel.Cadastro.Medicamentos;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,7 +24,7 @@ namespace FarmaBot.DomainModel.Compras
         {
             var medicamentos = repositorioDeMedicamentos.ObtemMedicamentosParaCompras();
 
-            var med = medicamentos.Single(m => m.Id.Equals(id));
+            var med = medicamentos.Single(m => m.Codigo.Equals(id));
 
             if (med != null) MedicamentosComprados.Add(med);
 

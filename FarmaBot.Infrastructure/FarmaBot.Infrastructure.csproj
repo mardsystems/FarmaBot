@@ -43,8 +43,9 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="ApplicationModel\RealizacaoDeDiagnosticos\ServicoDeDiagnosticoUsandoBaseDeConhecimento.cs" />
+    <Compile Include="DomainModel\Cadastro\Sugestoes\RepositorioDeSugestoesInMemory.cs" />
     <Compile Include="DomainModel\InMemoryDatabase.cs" />
-    <Compile Include="DomainModel\Medicamentos\RepositorioDeMedicamentosInMemory.cs" />
+    <Compile Include="DomainModel\Cadastro\Medicamentos\RepositorioDeMedicamentosInMemory.cs" />
     <Compile Include="DomainModel\Compras\RepositorioDePedidosInMemory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

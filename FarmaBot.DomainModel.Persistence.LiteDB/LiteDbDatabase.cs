@@ -1,4 +1,4 @@
-﻿using FarmaBot.DomainModel.Sintomas;
+﻿using FarmaBot.DomainModel.Cadastro.Sintomas;
 using LiteDB;
 using System.IO;
 
@@ -18,9 +18,9 @@ namespace FarmaBot.DomainModel
                 var sintomas = db.GetCollection<Sintoma>("sintomas");
 
                 sintomas.Insert(new Sintoma
-                {
-                    Descricao = "Sintoma 1"
-                });
+                (
+                    "Sintoma 1"
+                ));
             }
         }
     }

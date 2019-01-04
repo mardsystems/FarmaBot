@@ -1,11 +1,10 @@
-﻿using FarmaBot.DomainModel.Medicamentos;
-using FarmaBot.DomainModel.Sintomas;
+﻿using FarmaBot.DomainModel.Diagnostico;
 using System.Collections.Generic;
 
 namespace FarmaBot.ApplicationModel.RealizacaoDeDiagnosticos
 {
     public interface IRealizacaoDeDiagnosticos
     {
-        List<Medicamento> RealizaDiagnostico(Sintoma sintoma);
+        Medicamento[] RealizaDiagnostico(string descricaoDeSintomas);
     }
 }

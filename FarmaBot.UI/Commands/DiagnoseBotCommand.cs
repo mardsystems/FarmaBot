@@ -1,5 +1,5 @@
 ﻿using FarmaBot.ApplicationModel.RealizacaoDeDiagnosticos;
-using FarmaBot.DomainModel.Sintomas;
+using FarmaBot.DomainModel.Cadastro.Sintomas;
 using FarmaBot.UI.Callbacks;
 using Newtonsoft.Json;
 using Telegram.Bot.Types;
@@ -28,14 +28,11 @@ namespace FarmaBot.UI.Commands
                 return;
             }
 
-            var sintoma = new Sintoma
-            {
-                Descricao = message.Text.Substring(message.Text.IndexOf(" ")).Trim()
-            };
+            var descricaoDeSintomas = message.Text.Substring(message.Text.IndexOf(" ")).Trim();
 
-            var medicamentos = realizacaoDeDiagnosticos.RealizaDiagnostico(sintoma);
+            var medicamentos = realizacaoDeDiagnosticos.RealizaDiagnostico(descricaoDeSintomas);
 
-            if (medicamentos.Count == 0)
+            if (medicamentos.Length == 0)
             {
                 await Bot.SendTextMessageAsync(
                     message.Chat.Id,
@@ -44,7 +41,7 @@ namespace FarmaBot.UI.Commands
             }
             else
             {
-                InlineKeyboardButton[] opcoes = new InlineKeyboardButton[medicamentos.Count];
+                InlineKeyboardButton[] opcoes = new InlineKeyboardButton[medicamentos.Length];
 
                 var idx = 0;
 
@@ -53,7 +50,7 @@ namespace FarmaBot.UI.Commands
                     opcoes[idx] = InlineKeyboardButton.WithCallbackData(medicamento.Nome, JsonConvert.SerializeObject(new
                     {
                         type = BotCallbackType.ADD_CARRINHO_CALLBACK,
-                        id = medicamento.Id
+                        id = medicamento.Codigo.Valor
                     }));
 
                     idx++;

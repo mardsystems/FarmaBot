@@ -45,7 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LiteDbDatabase.cs" />
-    <Compile Include="Medicamentos\RepositorioDeMedicamentosLitDb.cs" />
+    <Compile Include="Cadastro\Medicamentos\RepositorioDeMedicamentosLitDb.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

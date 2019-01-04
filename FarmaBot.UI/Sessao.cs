@@ -1,6 +1,6 @@
 ﻿using FarmaBot.DomainModel;
 using FarmaBot.DomainModel.Compras;
-using FarmaBot.DomainModel.Medicamentos;
+using FarmaBot.DomainModel.Cadastro.Medicamentos;
 
 namespace FarmaBot.UI
 {

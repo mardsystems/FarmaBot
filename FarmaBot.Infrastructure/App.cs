@@ -1,8 +1,9 @@
 ﻿using FarmaBot.ApplicationModel.RealizacaoDeDiagnosticos;
 using FarmaBot.ApplicationModel.RealizacaoDePedidos;
+using FarmaBot.DomainModel.Cadastro.Medicamentos;
+using FarmaBot.DomainModel.Cadastro.Sugestoes;
 using FarmaBot.DomainModel.Compras;
 using FarmaBot.DomainModel.Diagnostico;
-using FarmaBot.DomainModel.Medicamentos;
 
 namespace FarmaBot
 {
@@ -18,9 +19,11 @@ namespace FarmaBot
         {
             var repositorioDeMedicamentos = new RepositorioDeMedicamentosInMemory();
 
-            var servicoDeDiagnostico = new DomainModel.Diagnostico.ServicoDeDiagnostico(repositorioDeMedicamentos);
+            var repositorioDeSugestoes = new RepositorioDeSugestoesInMemory();
 
-            realizacaoDeDiagnosticos = new ApplicationModel.RealizacaoDeDiagnosticos.ServicoDeDiagnostico(servicoDeDiagnostico);
+            var servicoDeDiagnostico = new DiagnosticoPorSugestaoDeMedicamentos(repositorioDeSugestoes);
+
+            realizacaoDeDiagnosticos = new ServicoDeDiagnostico(servicoDeDiagnostico, null);
 
             var repositorioDePedidos = new RepositorioDePedidosInMemory();
 

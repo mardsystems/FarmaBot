@@ -1,22 +1,27 @@
 ﻿using FarmaBot.DomainModel.Diagnostico;
-using FarmaBot.DomainModel.Medicamentos;
-using FarmaBot.DomainModel.Sintomas;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace FarmaBot.ApplicationModel.RealizacaoDeDiagnosticos
 {
     public class ServicoDeDiagnostico : IRealizacaoDeDiagnosticos
     {
-        private readonly IDiagnostico sintomasService;
+        private readonly IServicoDeDiagnostico servicoDeDiagnostico;
 
-        public ServicoDeDiagnostico(IDiagnostico sintomasService)
+        private readonly AdaptadorDeCadastroDeSintomas adaptadorDeCadastroDeSintomas;
+
+        public ServicoDeDiagnostico(IServicoDeDiagnostico servicoDeDiagnostico, AdaptadorDeCadastroDeSintomas adaptadorDeCadastroDeSintomas)
         {
-            this.sintomasService = sintomasService;
+            this.servicoDeDiagnostico = servicoDeDiagnostico;
+
+            this.adaptadorDeCadastroDeSintomas = adaptadorDeCadastroDeSintomas;
         }
 
-        public List<Medicamento> RealizaDiagnostico(Sintoma sintoma)
+        public Medicamento[] RealizaDiagnostico(string descricaoDeSintomas)
         {
-            var medicamentos = sintomasService.Diagnosticar(sintoma);
+            var sintomas = adaptadorDeCadastroDeSintomas.ObtemSintomasAPartirDeUmaDescricao(descricaoDeSintomas);
+
+            var medicamentos = servicoDeDiagnostico.Diagnostica(sintomas);
 
             return medicamentos;
         }

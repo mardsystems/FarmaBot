@@ -41,17 +41,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cadastro\Medicamentos\CodigoDeMedicamento.cs" />
+    <Compile Include="Cadastro\Sintomas\CodigoDeSintoma.cs" />
+    <Compile Include="Cadastro\Sintomas\IRepositorioDeSintomas.cs" />
+    <Compile Include="Cadastro\Sugestoes\IRepositorioDeSugestoes.cs" />
+    <Compile Include="Cadastro\Sugestoes\SugestaoDeMedicamentoPorSintoma.cs" />
     <Compile Include="Compras\CarrinhoDeCompras.cs" />
     <Compile Include="Compras\IRepositorioDePedidos.cs" />
     <Compile Include="Compras\Pedido.cs" />
+    <Compile Include="Diagnostico\AdaptadorDeCadastroDeSintomas.cs" />
+    <Compile Include="Diagnostico\AdaptadorDeCadastroDeMedicamentos.cs" />
     <Compile Include="Diagnostico\CoberturaDeSintoma.cs" />
-    <Compile Include="Diagnostico\IDiagnostico.cs" />
-    <Compile Include="Diagnostico\ServicoDeDiagnostico.cs" />
+    <Compile Include="Diagnostico\IServicoDeDiagnostico.cs" />
+    <Compile Include="Diagnostico\Medicamento.cs" />
+    <Compile Include="Diagnostico\DiagnosticoPorSugestaoDeMedicamentos.cs" />
+    <Compile Include="Diagnostico\Sintoma.cs" />
+    <Compile Include="Diagnostico\TradutorDeSintoma.cs" />
     <Compile Include="Endereco.cs" />
-    <Compile Include="Medicamentos\IRepositorioDeMedicamentos.cs" />
-    <Compile Include="Medicamentos\Medicamento.cs" />
+    <Compile Include="Cadastro\Medicamentos\IRepositorioDeMedicamentos.cs" />
+    <Compile Include="Cadastro\Medicamentos\Medicamento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sintomas\Sintoma.cs" />
+    <Compile Include="Cadastro\Sintomas\Sintoma.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\System.Extensions\System.Extensions.csproj">
@@ -59,5 +69,6 @@
       <Name>System.Extensions</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

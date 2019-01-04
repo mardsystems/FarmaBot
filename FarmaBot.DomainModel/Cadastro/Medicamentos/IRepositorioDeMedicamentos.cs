@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.DomainModel;
 
-namespace FarmaBot.DomainModel.Medicamentos
+namespace FarmaBot.DomainModel.Cadastro.Medicamentos
 {
-    public interface IRepositorioDeMedicamentos
+    public interface IRepositorioDeMedicamentos : IRepository<Medicamento>
     {
         List<Medicamento> ObtemMedicamentosParaDiagnostico();
 
