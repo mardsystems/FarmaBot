@@ -6,11 +6,11 @@ namespace FarmaBot.ApplicationModel.RealizacaoDeDiagnosticos
 {
     public class ServicoDeDiagnostico : IRealizacaoDeDiagnosticos
     {
-        private readonly IServicoDeDiagnostico servicoDeDiagnostico;
+        private readonly IDiagnosticoDeSintomas servicoDeDiagnostico;
 
         private readonly AdaptadorDeCadastroDeSintomas adaptadorDeCadastroDeSintomas;
 
-        public ServicoDeDiagnostico(IServicoDeDiagnostico servicoDeDiagnostico, AdaptadorDeCadastroDeSintomas adaptadorDeCadastroDeSintomas)
+        public ServicoDeDiagnostico(IDiagnosticoDeSintomas servicoDeDiagnostico, AdaptadorDeCadastroDeSintomas adaptadorDeCadastroDeSintomas)
         {
             this.servicoDeDiagnostico = servicoDeDiagnostico;
 

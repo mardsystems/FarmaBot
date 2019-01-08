@@ -5,11 +5,11 @@ using System.Linq;
 
 namespace FarmaBot.DomainModel.Diagnostico
 {
-    public class DiagnosticoPorSugestaoDeMedicamentos : IServicoDeDiagnostico
+    public class DiagnosticoDeSintomasPorSugestaoDeMedicamentos : IDiagnosticoDeSintomas
     {
         private readonly IRepositorioDeSugestoes repositorioDeSugestoes;
 
-        public DiagnosticoPorSugestaoDeMedicamentos(IRepositorioDeSugestoes repositorioDeSugestoes)
+        public DiagnosticoDeSintomasPorSugestaoDeMedicamentos(IRepositorioDeSugestoes repositorioDeSugestoes)
         {
             this.repositorioDeSugestoes = repositorioDeSugestoes;
         }

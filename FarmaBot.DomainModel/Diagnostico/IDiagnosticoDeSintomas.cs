@@ -2,7 +2,7 @@
 
 namespace FarmaBot.DomainModel.Diagnostico
 {
-    public interface IServicoDeDiagnostico
+    public interface IDiagnosticoDeSintomas
     {
         Medicamento[] Diagnostica(Sintoma[] sintomas);
     }

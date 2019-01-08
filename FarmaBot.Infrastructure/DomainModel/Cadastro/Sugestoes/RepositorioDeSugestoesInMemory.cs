@@ -7,32 +7,32 @@ namespace FarmaBot.DomainModel.Cadastro.Sugestoes
 {
     public class RepositorioDeSugestoesInMemory : IRepositorioDeSugestoes
     {
-        public IEnumerable<SugestaoDeMedicamentoPorSintoma> ObtemSugestoesDeMedicamentosPorSintomas(Sintoma[] sintomas)
+        public IEnumerable<SugestaoDeMedicamento> ObtemSugestoesDeMedicamentosPorSintomas(Sintoma[] sintomas)
         {
             throw new NotImplementedException();
         }
 
-        public IQueryable<SugestaoDeMedicamentoPorSintoma> AsQueryable()
+        public IQueryable<SugestaoDeMedicamento> AsQueryable()
         {
             throw new NotImplementedException();
         }
 
-        public void Add(SugestaoDeMedicamentoPorSintoma entity)
+        public void Add(SugestaoDeMedicamento entity)
         {
             throw new NotImplementedException();
         }
 
-        public void AddRange(SugestaoDeMedicamentoPorSintoma[] entities)
+        public void AddRange(SugestaoDeMedicamento[] entities)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(SugestaoDeMedicamentoPorSintoma entity)
+        public void Update(SugestaoDeMedicamento entity)
         {
             throw new NotImplementedException();
         }
 
-        public void Remove(SugestaoDeMedicamentoPorSintoma entity)
+        public void Remove(SugestaoDeMedicamento entity)
         {
             throw new NotImplementedException();
         }

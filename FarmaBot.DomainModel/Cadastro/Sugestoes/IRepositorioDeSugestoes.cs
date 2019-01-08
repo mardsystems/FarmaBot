@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace FarmaBot.DomainModel.Cadastro.Sugestoes
 {
-    public interface IRepositorioDeSugestoes : IRepository<SugestaoDeMedicamentoPorSintoma>
+    public interface IRepositorioDeSugestoes : IRepository<SugestaoDeMedicamento>
     {
-        IEnumerable<SugestaoDeMedicamentoPorSintoma> ObtemSugestoesDeMedicamentosPorSintomas(Sintoma[] sintomas);
+        IEnumerable<SugestaoDeMedicamento> ObtemSugestoesDeMedicamentosPorSintomas(Sintoma[] sintomas);
     }
 }

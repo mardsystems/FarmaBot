@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace FarmaBot.DomainModel.Cadastro.Sugestoes
 {
-    public class SugestaoDeMedicamentoPorSintoma : Entity
+    public class SugestaoDeMedicamento : Entity
     {
         public CodigoDeMedicamento CodigoDoMedicamentoSugerido { get; private set; }
 

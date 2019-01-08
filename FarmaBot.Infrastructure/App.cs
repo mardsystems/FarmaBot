@@ -21,7 +21,7 @@ namespace FarmaBot
 
             var repositorioDeSugestoes = new RepositorioDeSugestoesInMemory();
 
-            var servicoDeDiagnostico = new DiagnosticoPorSugestaoDeMedicamentos(repositorioDeSugestoes);
+            var servicoDeDiagnostico = new DiagnosticoDeSintomasPorSugestaoDeMedicamentos(repositorioDeSugestoes);
 
             realizacaoDeDiagnosticos = new ServicoDeDiagnostico(servicoDeDiagnostico, null);
 
